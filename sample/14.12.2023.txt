@@ -1,0 +1,19 @@
+103.213.195.141 - Cuddalore IP
+
+
+VPC:
+
+1, Create Own VPC - 192.168.0.0/16 - 65k+ | latency - Disable
+2, Create Subnets - Public 192.168.1.0/24 | Private 192.168.2.0/24
+3, Create  IG way - MY-IG | Mumbai AZ-1 
+4, Attach Gateways to VPC - attached My-IG to My -VPC
+5, Routetable Creation - Create public and Private Route table & associate it to appropriate Subnets.
+6, Edit Routes - In Public Route table add 0.0.0.0/0 | target MY - IG 
+7, Create Security Groups - For Both Public and Private 
+8, Add in bound - in public allow 22 and 80 and 3389.
+8.5, In private SG inbound rule add destition to Public CIDR (192.168.0.1/24) or PublicSG ID 
+9, Create Ec2 named as public use MY-VPC and Use Public Subnet enable Public IP and Public SG Then Launch.
+10, Create Ec2 named as Private Use My-Vpc and use private Subnet Disable Public Ip and Private SG Then Launch.
+11, Login to Public and check Internet Connection - it works.
+
+NATGATEWAY - Need to Study
