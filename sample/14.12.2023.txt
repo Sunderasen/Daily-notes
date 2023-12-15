@@ -3,7 +3,7 @@
 
 VPC:
 
-1, Create Own VPC - 192.168.0.0/16 - 65k+ | latency - Disable
+1, Create Own VPC - 192.168.0.0/16 - 65k+ | Tenancy - Disable
 2, Create Subnets - Public 192.168.1.0/24 | Private 192.168.2.0/24
 3, Create  IG way - MY-IG | Mumbai AZ-1 
 4, Attach Gateways to VPC - attached My-IG to My -VPC
@@ -15,7 +15,7 @@ VPC:
 9, Create Ec2 named as public use MY-VPC and Use Public Subnet enable Public IP and Public SG Then Launch.
 10, Create Ec2 named as Private Use My-Vpc and use private Subnet Disable Public Ip and Private SG Then Launch.
 11, Login to Public and check Internet Connection - it works.
-12, if we need to use intenet in pvt machine need to create nat gateway .
+12, if we need to use intenet in pvt machine need to create NAT GATEWAY .
 13, we are going to create NAT GATEWAy using Public Subnet after creation attach it to Pvt Route Table. (NAT is the Costliest One)
 
-NATGATEWAY - Need to Study
+ 
