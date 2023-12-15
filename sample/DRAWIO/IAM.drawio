@@ -1,0 +1,98 @@
+<mxfile host="Electron" modified="2023-12-15T12:18:03.899Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="mLMWWmgIpUl7iAJ74rUS" version="22.1.2" type="device">
+  <diagram name="Page-1" id="5eqMkFX2Qn47RHFwI1bk">
+    <mxGraphModel dx="864" dy="1695" grid="1" gridSize="14" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-403" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.virtual_private_cloud;fillColor=#F58534;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="415.25" y="98" width="79.5" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-405" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
+          <mxGeometry x="154" y="196" width="602" height="298" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-408" value="" style="swimlane;startSize=0;rotation=90;fillColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="98" y="98" width="84" height="200" as="geometry">
+            <mxRectangle x="177" y="163" width="70" height="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-414" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fillColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-408" vertex="1">
+          <mxGeometry x="-42" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-416" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ec2;fillColor=#F58534;gradientColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-408" vertex="1">
+          <mxGeometry x="-28" y="86" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="BsCewzvtUNNrjIhix-3n-1" value="SG - PUB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1YlYQ66-eo5C6Xk60wuZ-408">
+          <mxGeometry x="12" y="70" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-410" value="" style="swimlane;startSize=0;rotation=90;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="420" y="98" width="84" height="200" as="geometry">
+            <mxRectangle x="499" y="163" width="70" height="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-415" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fillColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-410" vertex="1">
+          <mxGeometry x="-42" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-417" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ec2;fillColor=#F58534;gradientColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-410" vertex="1">
+          <mxGeometry x="-28" y="86" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="BsCewzvtUNNrjIhix-3n-2" value="SG - PVT" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1YlYQ66-eo5C6Xk60wuZ-410">
+          <mxGeometry x="12" y="86" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-420" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1YlYQ66-eo5C6Xk60wuZ-405" source="1YlYQ66-eo5C6Xk60wuZ-411" target="1YlYQ66-eo5C6Xk60wuZ-408" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-411" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.route_table;fillColor=#F58536;gradientColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="119" y="84" width="42" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-423" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1YlYQ66-eo5C6Xk60wuZ-405" source="1YlYQ66-eo5C6Xk60wuZ-412" target="1YlYQ66-eo5C6Xk60wuZ-410" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-427" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1YlYQ66-eo5C6Xk60wuZ-405" source="1YlYQ66-eo5C6Xk60wuZ-412" target="1YlYQ66-eo5C6Xk60wuZ-424" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-412" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.route_table;fillColor=#F58536;gradientColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="441" y="84" width="42" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-418" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1YlYQ66-eo5C6Xk60wuZ-405" source="1YlYQ66-eo5C6Xk60wuZ-413" target="1YlYQ66-eo5C6Xk60wuZ-411" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-413" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_gateway;fillColor=#F58536;gradientColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="266" y="14" width="56" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-421" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1YlYQ66-eo5C6Xk60wuZ-405" source="1YlYQ66-eo5C6Xk60wuZ-416" target="1YlYQ66-eo5C6Xk60wuZ-417" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-426" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1YlYQ66-eo5C6Xk60wuZ-405" source="1YlYQ66-eo5C6Xk60wuZ-424" target="1YlYQ66-eo5C6Xk60wuZ-408" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-424" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpc_nat_gateway;fillColor=#F58534;gradientColor=none;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="372" y="42" width="48" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-429" value="&lt;b&gt;IG&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="312" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-430" value="Route Table" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="42" y="84" width="72" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-431" value="Route Table" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="483" y="83" width="72" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-432" value="&lt;b&gt;Public SNET - 192.168.1.0/24&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="15" y="252" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-433" value="&lt;b&gt;Private SNET - 192.168.1.0/24&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1YlYQ66-eo5C6Xk60wuZ-405" vertex="1">
+          <mxGeometry x="322" y="252" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BsCewzvtUNNrjIhix-3n-3" value="NAT - GW" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1YlYQ66-eo5C6Xk60wuZ-405">
+          <mxGeometry x="423" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YlYQ66-eo5C6Xk60wuZ-428" value="VPC - 192.168.0.0/16" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="518" y="122" width="126" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BsCewzvtUNNrjIhix-3n-4" value="&lt;h1&gt;VPC:&lt;/h1&gt;&lt;div&gt;&lt;blockquote&gt;&lt;pre&gt;&lt;ol&gt;&lt;li&gt;In below diagram&amp;nbsp; VPC is created for Connect one instance with another using PVT IP .&lt;/li&gt;&lt;li&gt;Here we are firstly created Two Subnets PVT and&amp;nbsp; PUB&amp;nbsp;&lt;/li&gt;&lt;li&gt;Then IG for VPC then Route Tables Associate subnets to route tables and in public RT alone add a IG&amp;nbsp;&lt;/li&gt;&lt;li&gt;And Create Secgrp for both Public and private In inbound of Pubn add http,rdp,ssh etc...ayw&lt;/li&gt;&lt;li&gt;in private SecGrp inbound add&amp;nbsp; a Pubsec id or Public Subnet cidr.&lt;/li&gt;&lt;li&gt;then create instances Pub and private&amp;nbsp; associate private grops to private instance and public grps to public instances&lt;/li&gt;&lt;li&gt;now in private dont allocate public ip for pvt instance.&lt;/li&gt;&lt;li&gt;Now log in to pub instance then ping the private ip of pvt instance it will ping becaue we are in same VPC but cant able to use inter net cause of we dont have attached internet gatwey to the route table .&lt;/li&gt;&lt;li&gt;if we need internet without connecting&amp;nbsp; internet gateway use nat gateway&amp;nbsp;&lt;/li&gt;&lt;li&gt;create nat gateway and associate it to public subnet now we can use internet in pvt machine .&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="42" y="-154" width="868" height="336" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
