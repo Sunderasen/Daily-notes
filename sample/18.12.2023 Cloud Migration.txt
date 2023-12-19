@@ -1,0 +1,11 @@
+ClI - Migration
+
+VMIE - is only available on CLi.
+
+1 . Creating IAM roles through CLI.
+
+2 . Creating Permissions to Role.
+
+3 . Ova to AMI creation
+
+4 . Status Check

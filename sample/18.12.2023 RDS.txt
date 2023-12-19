@@ -1,0 +1,58 @@
+AMAZON RDS - DATABASE
+
+Database [ Storing data in the structured manner] 
+S3 [s3 is storing  structured and Unstructured data only photo , videos]
+
+Amazon Relational Database Service - structured DB , Schema Based Database.
+
+Types Of Database:
+
+Structured   - RDS
+Unstructured - Redshift
+Semi Structure - Dynamo DB2
+
+Application current data are stored in database.
+
+Components Of Database :
+-----------------------
+1, Database
+2, Schemas
+3, Table
+4, Rows & Colums
+
+In Database Read is often used and Write is Secondly most used.
+
+Replication -> one Db to another db and cross region replication is also available.
+
+Master and Slave Database :
+
+In master Db we can able to read and write
+
+In slave database we only read this db act as a replascement for the down time of the master DB.
+
+Our work is Establish the master slave environment - Making Queries is Users work .
+
+DynamoDB -  straightly Handle with Rows and tables no Db and schema.
+
+MySQL - is only free tier eligable
+
+Master replica Creation steps:
+
+1, subnet group
+	- backup and recovery.
+	- mumbai regian - 3 az.
+	- Subnet name and description must then vpc selection .
+	- add availablity zone and subnets.
+	- then create the subnet group.
+2, mysql creation
+3, ec2 instance
+4, installation of mysql to ec2 instance
+5, DDL  & DML  
+
+
+
+
+
+
+
+
