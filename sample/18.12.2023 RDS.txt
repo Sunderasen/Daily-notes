@@ -49,8 +49,10 @@ Master replica Creation steps:
 4, installation of mysql to ec2 instance
 5, DDL  & DML  
 
+Database installation :( Aws Linux 2 only supported 1 not supported)
 
-
+ - yum install mysql -y 
+ - mysql -h <endpoint> -u username -P 3306 -p 
 
 
 
