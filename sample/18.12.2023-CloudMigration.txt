@@ -6,6 +6,6 @@ VMIE - is only available on CLi.
 
 2 . Creating Permissions to Role.
 
-3 . Ova to AMI creation
+3 . Ova to AMI creation.
 
 4 . Status Check
