@@ -22,6 +22,19 @@ SQS :
 
 SNS:
 
--MiniProject 
+-MiniProject Using - sns sqs iam email
 
- 
+	- in sns we have to create topic .
+	- inside the topic we have to add sqs queue arn to send message to the queue.
+	- firstly we have to create an iam sns full access role then attaching it to SQS queue in acces giving tab .
+	- then add subscription to topic for sqs and then email clients .
+	- then publish in sns we will receive the msg on sqs and given email.
+
+-Realtime Project using - sns ec2 iam sqs CW email	
+
+	- Firstly need an ec2 instance then go to cloud watch metrics 
+	- in metrics need to add an instance id and select cpu utilization 
+	- add sns topic and action to taken for the cpu utilzation
+	- set alarm frequecy 5 min (For example)
+	- Now the cpu utilization alert will work when the cpu crosses 80 %.
+	- the sns configured topics and sqs configured queue receiving the alert.
