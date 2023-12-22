@@ -7,9 +7,9 @@ Amazon Relational Database Service - structured DB , Schema Based Database.
 
 Types Of Database:
 
-Structured   - RDS
-Unstructured - Redshift
-Semi Structure - Dynamo DB2
+Structured   - RDS.
+Unstructured - Redshift.
+Semi Structure - Dynamo DB2.
 
 Application current data are stored in database.
 
