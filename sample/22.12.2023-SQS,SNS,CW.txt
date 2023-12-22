@@ -10,13 +10,18 @@ SQS - Simple Queue service - one to one | Alerting Service
 SNS - Simple Notificatoin service - one to many | Alerting Service
 CloudWatch |  Monitoring Service
 
-
+ARN - amazon resource name
 
 SQS :
 
 - Application integration Category.
-- system to system messaging
-- Types of Queue - Standard & FIFO
-- 
+- system to system messaging.
+- Types of Queue - Standard & FIFO.
+- If sender and receiver is the Owner this queue is called as a private queue.
+- Purge is only delete the messages and delete will delete the Both msg & queue.
+
+SNS:
+
+-MiniProject 
 
  
