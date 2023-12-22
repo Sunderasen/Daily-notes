@@ -1,4 +1,4 @@
-SQS - SNS - Cloudwatch
+okSQS - SNS - Cloudwatch
 
 - single point of failure
 
