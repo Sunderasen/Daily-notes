@@ -1,0 +1,71 @@
+ELB 
+
+Load balancer is used to balance the hits from the network .
+
+classic loadbalancer :
+
+-Clients make requests to your application.
+-The listeners in your load balancer receive requests matching their protocol and port
+-The receiving listener forwards requests to healthy registered instances using the routing algorithm of the listener protocol. 
+-You configure the health checks that monitor the health of the registered instances.
+-The healthy instances receive traffic. You can register or deregister instances to your load balancer either manually or by way of an autoscaling group 
+without disrupting the overall flow of requests to your application.
+
+First create Loadbalancer:
+--------------------------------
+- LB name
+- Internet faced and Internel -- select internet faced for outside acces.
+- Select vpc in vpc subnet is must allocated with the Auto allocatepublic ip address.
+- Then create subnets from different az
+- select SECGRP (needs to allow http) 
+- Configure listeners port (in case u need to use diff port apart from 80)
+- health check default - select ping folder (That means Lb ping the /index.html certain period)
+- Finally check summary and Create load balancer.
+
+Second create Launch template: 
+---------------------------------------
+- create launch template as peryour requirement 
+- attach the subnet that is associated with LB. 
+- In advanced config need to add Bash script for (automate) httpd installation on server creation.(In realtime we will attach our webserver) 
+
+Third create auto scaling Group:
+---------------------------------------
+-create launch template name & Select launch template
+-Select vpc and subnets if u want to overrite launch template we able abl to do in this step
+-Attach loadbalancer
+-configure how many desired , minimum and maximum instances , target tracking -Cpu utilzation
+-then go to preview & create ASG.
+
+now check the instance  created or not 
+
+- first it will create desired capacity
+- as per our target tracking if it will achive the target tracking maximum it will create one extra instance with the launch template.
+
+check with ELB dns weather the HTTPD connecting are not.  
+
+
+===================================================================================================================
+
+Application Load balancer:
+--------------------------------
+
+1 , The Application Load Balancer distributes incoming HTTP and HTTPS traffic across multiple targets such as Amazon EC2 instances, microservices,
+and containers, based on request attributes. When the load balancer receives a connection request, it evaluates the listener rules in priority order to determine which rule to apply, 
+and if applicable, it selects a target from the target group for the rule action.
+
+2, first we have to create an launch template for each micro services instances , like before created for classic load balancer
+
+3, then create two target groups for each micro services if u have two micro services we have to create two target group
+
+ 
+
+
+
+
+
+
+
+
+
+
+
