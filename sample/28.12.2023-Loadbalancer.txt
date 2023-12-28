@@ -1,0 +1,18 @@
+Loadbalancer 
+
+it is used to speed the traffic equally to the servers 
+
+in application loadbalancers we can able to use microservices if we have 5 micro services in our website 
+
+we can able to set every sever for each micro services and can able to set the path and conditions for the microservices
+
+Scenario:
+
+there are four servers in our hand 2 is for main page two is for others now create loabalacner for ths servers and reate target group ..
+
+in this case we need to create two target groups in first TG we have to add main page servers and select which index.html file we need to target. then create a app load balancer attach it to TG then check with that loadbalancer dns for thier working.
+
+then create a Tg-2 add other microservice server set the path to be targeted then go to loadalancer add rule if path=/others*
+condition = if the path reaches the particular condition send the traffic to the Tg-2 .
+
+Now check with dns url with adding /others.html in the path..
