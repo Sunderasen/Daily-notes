@@ -1,0 +1,94 @@
+Route53:
+
+What is DNS?
+
+DNS, or the Domain Name System, translates human readable domain names (for example, www.amazon.com) to machine readable IP addresses
+(for example, 192.0..44). When you open a web browser and go to a website, you don't have to remember and enter a long number. Instead, you can enter a
+domain name like example.com and still end up in the right place.
+DNS default port number is 53, Hence we are calling this service as Route53.
+We can either purchase Domain from AWS / 3rd party provider.
+DNS should be a Globally Unique one.
+
+Route 53
+GoDaddy -------> www.example.com -------> 4NS (Nameservers) acts like a backend server (This will be automatically configured by the provider)
+FreeNom
+DNS Propogation time varies from minimum 1min to max 48hours.
+
+Steps:
+Simple Routing Policy - When there is only one webserver, we will use this policy
+
+1. Create 3 Instance with sample application into user data
+#! /bin/bash
+yum install httpd-y
+service httpd start
+echo "This is my Route53 Application" > /var/www/html/index.html
+2. Purchase a Domain from Route53 or from 3rd party providers
+3. Create Hosted zone - Provide Domain name - public hosted zone
+4. Get the Nameservers - change it inside GoDaddy NServers
+5. Now try the Domain name in browser and confirm the output of application.
+(*** Delete the Record set of Simple Routing)
+Weighted Routing Policy - This policy used according to the weightage of the server
+(Rename the Instances to show the difference)
+6. Create Record - provide IP Address (1st machine) - Change the TTL to 1min (for Quicker output) - Change the Routing policy to weighted - Set the weight
+(between 0 to 255) - Give name for Record ID (this should represent the configuration of the machine).
+Create another Record - Provide 2nd machine IP Address - Complete the steps
+7. Try giving command (nslookup [domain name]), so that it will show the IP Address of the machine accordingly.
+(*** Delete the Record set of Weighted Routing)
+Geolocation Routing Policy - The server can be re-routed according to the location, and Deniel of certain website can be configured by restricting the location.
+(Rename the Instance to show the difference)
+8. Create Record - provide IP Address (IND machine) - Change the TTL to 1min (for Quicker output) - Change the Routing policy to Geolocation - Select the
+Region as INDIA - Give name for Record ID (this should represent the Region of the machine).
+9. Try giving command (nslookup [domain name]), so that it will show the IP Address of the machine according to the region.
+(*** Delete the Record set of Geolocation Routing)
+Latency Routing Policy - This will reach the nearby server and give me the output.
+10. Create Record - provide IP Address (Mumbai machine) - Change the TTL to 1min (for Quicker output) - Change the Routing policy to Latency - Select
+the Region as Mumbai - Give name for Record ID (this should be related to the content of the machine).
+Create another Record - Provide 2nd location (singapore) IP Address - Complete the steps.
+11. Try giving command (nslookup [domain name]), so that it will show the IP Address of the machine according to the latency.
+(*** Delete the Record set of Latency Routing)
+FailOver Routing Policy - If my Primary server got failed, it will automatically picks up the secondary server. We need to maintain 2 different server under 2
+different Location.
+(Rename the Instance to show the difference)
+12. Create Health check - name it - provide the primary machine IP- give hostname (www.example.com) - path (index.html) - [Set Notification if needed]
+13. Create Record - provide IP Address (Primary machine) - Change the TTL to 1min (for Quicker output) - Change the Routing policy to Failover - Set the
+Failover type as Primary - Enable health check for primary - Give name for Record ID (this should be related to the content of the machine).
+Create another Record - Provide Secondary IP Address - Set the Failover type as Secondary - (Don't enable health check for secondary machine) -
+Complete the steps.
+14. Now, manually terminate the Primary Instance, so that it should re-reoute to the secondary server.
+15. Try giving command (nslookup [domain name]), so that it will show the secondary IP Address of the machine.
+(*** Delete the Record set of Failover Routing as well as the Health check)
+(*** Delete the Hosted zone for avoiding the charges)
+
+Task:
+1. How Does Multivalue Routing policy works? and Under which scenario this policy has been used?
+2. What are Record Types? and the differences I
+EBS: Elastic Beanstalk - End to End Web Application Management
+Task:
+2. What is IAAS, PAAS, and SAAS
+3. What is Blue, Green Deployment? I
+EBS coming under PAAS env.
+Under EBS, Developer can try their code in the env directly. There is no need for them to depend on Infra team.
+Different types of code
+JAR- Java based
+WAR - Web Based
+EAR - Enterprise Based
+All this format will come under a zipped format.
+Search in Google for (sample war file download) - Select the 1st tomcat apache - download it.
+Scenario 1:
+1. Provide the application name - Select the platform (ex.tomcat) [it will automatically picks up the latest branch and version] - try with sample application given
+by Amazon - configure more options - select free-tier-edit security and attach the existing keypair (as we need to login to the machine) - create app
+Now, Amazon will create a complete end to end application from their end.
+Scenario 3:
+Tyring Blue Green Deployment
+3. Click on Actions - Clone Environment.
+4. Now Login to the clone machine - change as root user (sudo su -) - now go inside the tomcat directory path (cd /var/lib/tomcat/) - move inside the webapps
+cd webapps) - go inside the ROOT (cd ROOT).
+5. See the index.html by giving (cat index.html) and view the code
+6. Now remove the code (rm -rf index.html)
+7. Create a new index.html (vi index.html)
+8. Update the content accordingly and save it.
+9. Now try open the cloned URL, the updated content will reflect.
+10. Once the update has been made, we need to swap the cloned env with the original/prod server - Actions - swap environmental URL's select the env for
+which you need to swap.
+11. Now, try to refresh the production server in browser, the content should be an updated one.
+(*** Select Env - Terminate environment; Select Application - Delete Application)
