@@ -1,2 +1,0 @@
-memory - free -gh | grep "Mem:" | awk -F" " '{print "Used:" $3"%", "Free:" $4"%", "Avail:"$7"%"}'
-cpu -

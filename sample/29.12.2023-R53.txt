@@ -3,8 +3,7 @@ Route53:
 What is DNS?
 
 DNS, or the Domain Name System, translates human readable domain names (for example, www.amazon.com) to machine readable IP addresses
-(for example, 192.0..44). When you open a web browser and go to a website, you don't have to remember and enter a long number. Instead, you can enter a
-domain name like example.com and still end up in the right place.
+(for example, 192.168.0.44). When you open a web browser and go to a website, you don't have to remember and enter a long number. Instead, you can enter a domain name like example.com and still end up in the right place.
 DNS default port number is 53, Hence we are calling this service as Route53.
 We can either purchase Domain from AWS / 3rd party provider.
 DNS should be a Globally Unique one.
@@ -61,7 +60,9 @@ Complete the steps.
 
 Task:
 1. How Does Multivalue Routing policy works? and Under which scenario this policy has been used?
-2. What are Record Types? and the differences I
+2. What are Record Types? and the differences
+
+
 EBS: Elastic Beanstalk - End to End Web Application Management
 Task:
 2. What is IAAS, PAAS, and SAAS
