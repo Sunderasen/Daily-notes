@@ -1,0 +1,13 @@
+1. Bought a Domain named kloudkratos.online from hostinger
+2. Created a hosted zone on Route53 And Got 4 Nameservers
+3. Attached the nameservers to Hostinger (It will take More time to propogate)
+4. created  a instance and added apache2 and edited indexpage
+5. in hosted zone added A-record for simple routing using Instance ip address
+6. Then selected simple routing policy Bcoz we are going to add only one Server
+7. Created a Record it takes 2 min to create 
+8. then checked my domain in browser it lands to hostinger default parkdomin page
+9. igot depressed Then finded a tool called dnschecker
+1. dns checker provides a detail about propogation time and seen in india my site is still not propogated
+2. In germany the site is propogated so i connected vpn to germany and checked the site url
+3. it showed the content that i feeded in instance, now my doubt was cleared opreation success.
+4. now deleted a hosted zone and instances.
