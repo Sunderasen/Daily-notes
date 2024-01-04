@@ -5,4 +5,4 @@ S3:
 3, What ever if we give public access if i enabled acl we have to give 
    Public access permission for every single object.
 4, Bucket Versioning is cost.
-5, 
+ 
