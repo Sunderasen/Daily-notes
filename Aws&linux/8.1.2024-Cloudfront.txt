@@ -1,1 +1,6 @@
 Cloud-front
+Used to reduce the latency between the user and the resource.
+every regian has its own edge locations in edge locations .
+cloudfront will save the content that user requested as a cache.
+first time only the user will interact with the actual resource like s3.
+from second and third time the user will access the content that stored in a cloud front.
