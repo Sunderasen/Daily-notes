@@ -1,0 +1,13 @@
+LAMP - Linux Apache MYsql PHP (Two Tier Architecture)
+
+Prerequesits - ec2 server , Db server , Dns name , ssl certificate 
+
+Steps To be Done:-
+==================
+1. Create Two Security Groups in AWS - For App & DB Servers
+2. Create Two Instances - App & DB
+3. Configure App Server
+4. Configure DB Server
+5. Install ITOP Tool in App server
+6. Configure SSL in App Server - Install Certificate
+7. Configure DNS in DNS Control Panel
