@@ -1,0 +1,25 @@
+APP
+Pubic-3.110.30.3
+Private-192.168.1.133
+
+
+DB
+Pubic-3.109.183.169
+private-192.168.1.210
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Sunder@#11';
+
+
+CriticalP!23
+
+Difficulties faced while installing it :
+
+need to install apache php unzip wget
+
+sudo apt-get install php-curl php-xml php-gd php-mysql php-soap
+
+# Change ownership to www-data
+sudo chown -R www-data:www-data /var/www/html/itop/
+
+# Grant write permissions to the www-data user
+sudo chmod -R 775 /var/www/html/itop/
