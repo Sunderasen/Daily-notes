@@ -1,0 +1,7 @@
+Splunk Master:
+
+wget -O splunk-9.1.3-d95b3299fa65-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.1.3/linux/splunk-9.1.3-d95b3299fa65-linux-2.6-amd64.deb"
+
+Splunk Slave:
+
+wget -O splunkforwarder-9.1.3-d95b3299fa65-Linux-armv8.deb "https://download.splunk.com/products/universalforwarder/releases/9.1.3/linux/splunkforwarder-9.1.3-d95b3299fa65-Linux-armv8.deb"
