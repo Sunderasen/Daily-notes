@@ -1,0 +1,7 @@
+Prometheus&graffana
+
+it is also working under master slave concept
+
+Prometheus - wget https://github.com/prometheus/prometheus/releases/download/v2.49.1/prometheus-2.49.1.linux-amd64.tar.gz
+unzip it in a opt folder and start prometheous file
+before that open prometheous.conf 
