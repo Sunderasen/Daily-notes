@@ -1,0 +1,21 @@
+Docker
+
+sudo apt install docker.io - Install docker
+
+docker ps - used to list all runing containers
+docker ps -a - used to list all containers running and stoped
+docker images - used to list all images that is pulled
+docker pull <imagename:regno> -to pull image from docker hub 
+docker run -itd -p "sourceport:destinationport" imagename - to run a docker image
+docker run -itd --name <containername> -p "sourceport:destinationport" imagename - to run a docker image with customised name
+docker exec it <containerid> /bin/bash - to enter into docker image
+docker stop <containerid> - to stop running container
+docker start <containerid> - to start container
+docker restart <containerid> - to restart running container
+docker rm <containerid> - to remove container
+docker rm -f <containerid> - to remove container forcefully
+docker log <containerid> - to view container logs
+docker inspect <containerid> - to inspect container code
+docker top <containerid> - to open system monitor of container
+docker stats - to view stats of docker conatiners
+
