@@ -23,3 +23,12 @@ docker save -o pathtosave.tar imagename - to take backup of the image or share t
 docker login - to login docker hub
 docker tag imagename:tag dockerusername/nameoftheimage and version - after tagging only we can push image to docker
 docker push  dockerusername/nameoftheimage and version -to push image to dockerhub
+ 
+Volume Sync:
+
+docker run -itd -p "port:port" -v "/localmachinepatch:/dockerpath" --name mycontainer https - this will sync conatainer path to local dir
+docker volume ls - this will list all docker volumes
+docker  volume create volumename - this will create a docker volume
+docker inspect volumeid - it will show where the volume is located
+docker run -itd --mount source=volumename,destination=dockerdestinationvolume  -p "port:port" httpd - it will create a container and mount the container destination volume to our source volume 
+
