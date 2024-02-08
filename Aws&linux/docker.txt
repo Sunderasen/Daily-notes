@@ -14,9 +14,12 @@ docker start <containerid> - to start container
 docker restart <containerid> - to restart running container
 docker rm <containerid> - to remove container
 docker rm -f <containerid> - to remove container forcefully
-docker log <containerid> - to view container logs
+docker logs <containerid> - to view container logs
 docker inspect <containerid> - to inspect container code
 docker top <containerid> - to open system monitor of container
 docker stats - to view stats of docker conatiners
-docker commit <containerid> newcontainername - to create our own dockerimage
+docker commit <containerid> newcontainername:tag--version - to create our own dockerimage
 docker save -o pathtosave.tar imagename - to take backup of the image or share the image
+docker login - to login docker hub
+docker tag imagename:tag dockerusername/nameoftheimage and version - after tagging only we can push image to docker
+docker push  dockerusername/nameoftheimage and version -to push image to dockerhub
