@@ -23,3 +23,5 @@ sudo chown -R www-data:www-data /var/www/html/itop/
 
 # Grant write permissions to the www-data user
 sudo chmod -R 775 /var/www/html/itop/
+
+It is worked
