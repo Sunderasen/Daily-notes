@@ -32,3 +32,50 @@ docker  volume create volumename - this will create a docker volume
 docker inspect volumeid - it will show where the volume is located
 docker run -itd --mount source=volumename,destination=dockerdestinationvolume  -p "port:port" httpd - it will create a container and mount the container destination volume to our source volume 
 
+Docker file
+
+Docker file must be named as : Dockerfile
+
+FROM Centos
+LABEL Name="metadata"
+WORKDIR /usr/local/apache2/httpd
+COPY /path /path
+RUN yum install httpd -y
+RUN yum install git -y
+
+
+After saving docker file we can able to build images using this docker file 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
