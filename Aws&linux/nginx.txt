@@ -1,0 +1,24 @@
+Installation - sudo apt install nginx -y
+Enable service - service nginx enable 
+Start service - service nginx start
+need to change default root folder of nginx in /etc/nginx/nginx.conf file to /var/www/<Sitename.com>
+and then need to change the sites-available as per our need.
+and then need to copy the sites avilable file to sites enabled.
+needs to restart nginx service
+
+
+sites-available/testsite.con -->
+
+server {
+ listen 80;
+ listen [::]:80;
+
+ server_name testsite.com;
+
+ root /var/www/testsite.com;
+ index index.html;
+
+ location / {
+ try_files $uri $uri/ =404;
+ }
+}
