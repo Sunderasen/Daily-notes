@@ -1,0 +1,11 @@
+- hosts: all
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: Installation of remmina nodejs
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - remmina
+        - nodejs

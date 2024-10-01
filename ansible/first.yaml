@@ -1,0 +1,17 @@
+- hosts: all
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: install apache 2 on all hosts
+      apt:
+        name: apache2
+        state: present
+    - name: Copy file with owner and permissions
+      copy:
+        src: /home/ubuntu/index.html
+        dest: /var/www/html/index.html
+        mode: "0644"
+    - name: start apache2 if not started
+      service:
+        name: apache2
+        state: started

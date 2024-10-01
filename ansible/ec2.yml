@@ -1,0 +1,20 @@
+
+- hosts: localhost
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: Create EC2 instance with Ansible
+      amazon.aws.ec2_instance:
+        key_name: Ansible
+        instance_type: t2.micro
+        image_id: ami-0c2af51e265bd5e0e
+        state: present
+        region: ap-south-1
+        count: 1
+        vpc_subnet_id: subnet-09a6de0bed984ed6c
+        security_groups:
+          - MUMBAI-SG
+        wait: yes
+        network:
+          assign_public_ip: yes
+        tags:

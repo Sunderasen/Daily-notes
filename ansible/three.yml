@@ -1,0 +1,45 @@
+- hosts: jenkins
+  remote_user: ubuntu
+  become: yes
+  vars:
+      port: 9090" 
+  tasks:
+
+  - name: Download Jenkins GPG key
+    get_url:
+      url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+      dest: /usr/share/keyrings/jenkins-keyring.asc
+      mode: '0644'
+  - name: Add repo for Jenkins
+    apt_repository:
+      repo: "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/"
+      state: present
+      filename: jenkins
+  - name: Install Jenkins and Java
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - openjdk-11-jdk
+      - jenkins
+
+  - name: Start Jenkins service
+    service:
+      name: jenkins
+      state: restarted
+      enabled: yes
+  - name: Change Jenkins Port to 9090
+    lineinfile:
+      path: /usr/lib/systemd/system/jenkins.service
+      regexp: '^Environment="JENKINS_PORT='
+      line: Environment="JENKINS_PORT={{ port }}"
+    notify: restart jenkins
+  - name: restart dameon
+    systemd:
+      daemon_reload: yes
+  handlers:
+  - name: restart jenkins
+    service:
+      name: jenkins
+      state: restarted
+      enabled: yes

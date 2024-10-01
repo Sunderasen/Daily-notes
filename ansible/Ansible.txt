@@ -1,0 +1,49 @@
+Ansible
+
+Public and Private key Authentication
+
+AWS will paste our pem file public key in authorized keys an give us a Privatekey as a PEM.
+
+Master - 13.201.2.115
+slave1 - 192.168.1.60
+slave2 - 192.168.1.148
+slave3 - 192.168.1.211
+
+Installation:
+pip install ansible --> configuration and inventryfile not created in this method
+apt install ansible --> Full Installation with all files
+
+
+Ansible Command
+
+ADHOC - command 
+
+ansible -i salves.txt -m ping
+ansible -i slaves.txt -a "ip a"
+ansible -i slaves.txt -a "uname -a"
+
+states:-
+
+install - present
+uninstall - absent
+start - started
+stop - stopped
+restart - restarted
+
+command:-
+
+pakagename - name
+source - src
+destination - dest
+
+
+moduls:-
+
+yum , service , apt , 
+
+-b become
+
+#installation of paache2 on all slaves
+ansible -i slaves.txt -m yum -a "name=apache2 state=present" -b
+ansible -i slaves.txt -m service -a "name=apache2 state=restarted" -b
+
