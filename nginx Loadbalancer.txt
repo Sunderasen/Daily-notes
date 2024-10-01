@@ -1,0 +1,158 @@
+1. Round Robin (Default)
+This is the default method in Nginx, so you don't need to specify it explicitly.
+
+Configuration:
+http {
+    upstream backend {
+        server server1.example.com;
+        server server2.example.com;
+        server server3.example.com;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+Explanation:
+Requests will be distributed sequentially among server1, server2, and server3.
+
+2. Least Connections
+This method forwards requests to the server with the fewest active connections.
+
+Configuration:
+http {
+    upstream backend {
+        least_conn;
+        server server1.example.com;
+        server server2.example.com;
+        server server3.example.com;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+Explanation:
+Nginx will forward requests to the server with the fewest active connections, which can help balance the load more effectively for applications with varying request times.
+
+3. IP Hash
+This method ensures that a client (identified by their IP address) always connects to the same server.
+
+Configuration:
+http {
+    upstream backend {
+        ip_hash;
+        server server1.example.com;
+        server server2.example.com;
+        server server3.example.com;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+Explanation:
+Clients with the same IP address will consistently be directed to the same server. This is useful for session persistence.
+
+4. Weighted Load Balancing
+You can assign different weights to different servers, making Nginx send more requests to the higher-weighted servers.
+
+Configuration:
+http {
+    upstream backend {
+        server server1.example.com weight=3;  # Receives 3 times more traffic
+        server server2.example.com weight=1;
+        server server3.example.com weight=1;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+Explanation:
+server1 will receive 3 times the traffic compared to server2 and server3, which is useful if server1 has better performance.
+
+5. Random with Two Choices
+Nginx will pick two servers randomly and forward the request to the one with the fewest connections.
+
+Configuration:
+http {
+    upstream backend {
+        random two least_conn;
+        server server1.example.com;
+        server server2.example.com;
+        server server3.example.com;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+Explanation:
+This method offers a good balance between randomness and load distribution, choosing the server with fewer connections out of two randomly selected ones.
+
+6. Sticky Sessions (Nginx Plus Only)
+For Nginx Plus, you can implement advanced session persistence.
+
+Configuration (Nginx Plus):
+http {
+    upstream backend {
+        sticky cookie srv_id expires=1h;  # Sticky sessions with a cookie
+        server server1.example.com;
+        server server2.example.com;
+        server server3.example.com;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+Explanation:
+Clients will be directed to the same server based on a sticky cookie, ensuring that their session data remains consistent across multiple requests.
+
+7. Generic Hash
+You can hash any custom key (like a specific header, cookie, or URL) to route traffic consistently to the same server.
+
+Configuration:
+http {
+    upstream backend {
+        hash $request_uri consistent;  # Hash based on request URI
+        server server1.example.com;
+        server server2.example.com;
+        server server3.example.com;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+Explanation:
+Requests with the same URI will be routed to the same server. This can be useful for caching or when you need to consistently route specific requests to particular servers.
