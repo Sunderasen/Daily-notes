@@ -7,7 +7,7 @@ docker ps -a - used to list all containers running and stoped
 docker images - used to list all images that is pulled
 docker pull <imagename:regno> -to pull image from docker hub 
 docker run -itd -p "sourceport:destinationport" imagename - to run a docker image
-docker run -itd --name <containername> -p "sourceport:destinationport" imagename - to run a docker image with customised name
+docker run -itd --name <containername> -p "source(container)port:destination(localip)port" imagename - to run a docker image with customised name
 docker exec it <containerid> /bin/bash - to enter into docker image
 docker stop <containerid> - to stop running container
 docker start <containerid> - to start container
